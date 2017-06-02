@@ -2,124 +2,147 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <title>Hello Setlist</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Hello Setlist</title>
 </head>
 
-<body class="container" ng-app="ang">
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<body class="container" ng-app="setlist" ng-controller="LoginController">
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-                    <a class="navbar-brand" href="#">Setlist</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Top Trending</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+          <a class="navbar-brand" href="#">Setlist</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Top Trending</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
 
-    <div class="jumbotron">
-        <h1 class="text-center">Hello, world!</h1>
-        <p class="text-center">Bem vindo ao setlist</p>
-        <div class="col-lg-12">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Busque seu artista favorito ...">
-                <span class="input-group-btn">
+  <div class="jumbotron">
+    <h1 class="text-center">Hello, world!</h1>
+    <p class="text-center">Bem vindo ao setlist</p>
+    <div class="col-lg-12">
+      <section>
+        <div class="form-group">
+          <input class="form-control" placeholder="E-mail" ng-model="dados.email">
+        </div>
+        <div class="form-group">
+          <input class="form-control" placeholder="Senha" type="password" ng-model="dados.senha">
+        </div>
+        <br>
+        <button class="btn btn-default" ng-click="login()">Login</button> {{mensagemErro}}
+      </section>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Busque seu artista favorito ...">
+        <span class="input-group-btn">
         <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                </span>
-            </div>
-        </div>
+        </span>
+      </div>
     </div>
+  </div>
 
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h1 class="text-center">**Nome do Artista**</h1>
-            <p class="text-center">**Genero**</p>
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="https://placeimg.com/640/640/any" class="img-responsive img-rounded center-block" alt="Responsive image">
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <!--Vote-->
-                        <li href="#" class="list-group-item active text-center">Escolha sua música preferida</li>
-
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">34</span> Music 01
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">54</span> Music 02
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 03
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 04
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 05
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 06
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 07
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 08
-                        </li>
-                        <button type="button" class="btn btn-success btn-block">Enviar</button>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group">
-                        <a href="#" class="list-group-item active text-center">Setlist</a>
-                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item">Morbi leo risus</a>
-                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
-                    </ul>
-                </div>
-            </div>
-        </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="text-center">**Nome do Artista**</h1>
+      <p class="text-center">**Genero**</p>
     </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://placeimg.com/640/640/any" class="img-responsive img-rounded center-block" alt="Responsive image">
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group">
+            <!--Vote-->
+            <li href="#" class="list-group-item active text-center">Escolha sua música preferida</li>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="/assets/js/scripts.js"></script>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">34</span> Music 01
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">54</span> Music 02
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">14</span> Music 03
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">14</span> Music 04
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">14</span> Music 05
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">14</span> Music 06
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">14</span> Music 07
+            </li>
+            <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+              <span class="badge">14</span> Music 08
+            </li>
+            <button type="button" class="btn btn-success btn-block">Enviar</button>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group">
+            <a href="#" class="list-group-item active text-center">Setlist</a>
+            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item">Morbi leo risus</a>
+            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBO_M3bIBPtdyLFSWyoOJg7NkxSH4wV3m0",
+      authDomain: "projeto-mastertech.firebaseapp.com",
+      databaseURL: "https://projeto-mastertech.firebaseio.com",
+      projectId: "projeto-mastertech",
+      storageBucket: "projeto-mastertech.appspot.com",
+      messagingSenderId: "188868091743"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
