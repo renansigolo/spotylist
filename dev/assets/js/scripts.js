@@ -1,4 +1,1 @@
-//Test
-
-
-//sads
+var app = angular.module('ang', []);
