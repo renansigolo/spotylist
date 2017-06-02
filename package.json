@@ -1,0 +1,13 @@
+{
+  "name": "picklist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://renansigolo@github.com/renansigolo/picklist.git",
+  "author": "Renan Sigolo <renan.sigolo@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-watch": "^4.3.11"
+  }
+}
