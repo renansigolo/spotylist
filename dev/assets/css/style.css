@@ -6,6 +6,10 @@ body {
   float: right;
 }
 
+.button-margin-top {
+  margin-top: 20px;
+}
+
 @media (max-width: 767px) {
   .margin-top {
     margin-top: 20px;

@@ -1,6 +1,6 @@
 <div class="jumbotron col-lg-12" ng-controller="LoginController">
   <h1 class="text-center">Bem Vindo ao PickList !</h1>
-  <p class="text-center">Entre cam as suas credenciais para começar</p>
+  <p class="text-center">Entre com as suas credenciais para começar</p>
     <section>
       <div class="form-group">
         <input class="form-control" placeholder="E-mail" ng-model="dados.email">
@@ -8,9 +8,8 @@
       <div class="form-group">
         <input class="form-control" placeholder="Senha" type="password" ng-model="dados.senha">
       </div>
-      <br>
-      <button class="btn btn-default" ng-click="login()">Login</button>
       <div class="alert alert-danger" role="alert" ng-show="controleErro">{{mensagemErro}}</div>
+      <button class="btn btn-success btn-block button-margin-top" ng-click="login()">Login</button>
+      <button class="btn btn-warning btn-block button-margin-top" ui-sref="cadastro">Cadastrar</button>
     </section>
-    <a ui-sref="cadastro">Ainda não é cadastrado? <br>Clique aqui para cadastrar</a>
 </div>
