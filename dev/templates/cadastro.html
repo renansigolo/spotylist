@@ -1,4 +1,4 @@
-<div class="jumbotron col-lg-12" ng-controller="CadastroController">
+<div class="jumbotron col-xs-12" ng-controller="CadastroController">
   <h1 class="text-center">Formulário de Cadastro</h1>
   <p class="text-center">Insira seus dados abaixo</p>
     <section>
@@ -8,7 +8,11 @@
       <div class="form-group">
         <input class="form-control" placeholder="Senha" type="password" ng-model="dados.senha">
       </div>
-      <button class="btn btn-success" ng-click="cadastrar()">Enviar</button>
-      <button class="btn btn-warning" ui-sref="login">Voltar</button>
+      <div class="col-xs-6">
+      <button class="btn btn-success btn-block" ng-click="cadastrar()">Enviar</button>
+    </div>
+    <div class="col-xs-6">
+      <button class="btn btn-warning btn-block" ui-sref="login">Voltar</button>
+    </div>
     </section>
 </div>
