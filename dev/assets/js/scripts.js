@@ -1,6 +1,36 @@
-// O segundo parâmetro da função angular.module informa quais depências serão
-// usadas no nosso módulo.
-var app = angular.module('setlist', ['firebase']);
+//Inicia o modulo do Angular
+var app = angular.module('setlist', ['firebase', 'ui.router']);
+
+//Declara os modulos do controllers
+app.controller("LoginController", loginController);
+app.controller("CadastroController", cadastroController);
+app.controller("HomeController", homeController);
+
+//Rotas
+app.config(rotas);
+
+//Configuração das rotas
+function rotas($stateProvider, $urlRouterProvider) {
+
+  $stateProvider.state('login', {
+    templateUrl: 'templates/login.html',
+    controller: 'LoginController',
+    url: '/login'
+  });
+  $stateProvider.state('cadastro', {
+    templateUrl: 'templates/cadastro.html',
+    controller: 'CadastroController',
+    url: '/cadastro'
+  });
+  $stateProvider.state('home', {
+    templateUrl: 'templates/home.html',
+    controller: 'HomeController',
+    url: '/home'
+  });
+
+  $urlRouterProvider.otherwise('/login');
+
+}
 
 // A função angular.module retorna o módulo informado caso o segundo parâmetro
 // não seja informado.
@@ -25,7 +55,7 @@ function CadastroController($scope, $firebaseAuth, $window) {
     // Caso o cadastro seja realizado com sucesso, vamos redirecionar o
     // usuário para página 'quadro'.
     console.log(sucesso);
-    $window.location.href = 'usuario.html';
+    $window.location.href = '/home.html';
   }
 
   function cadastroErro(erro) {
@@ -35,15 +65,22 @@ function CadastroController($scope, $firebaseAuth, $window) {
   }
 }
 
-// Esse controller é similar ao CadastroController, verificar os comentários
-// feitos nele.
+function cadastroController($scope, $state) {
+  console.log("Cadastro");
+}
+
+function homeController($scope, $state) {
+  console.log("Home");
+}
+
 angular.module('setlist').controller("LoginController", LoginController);
 
 function LoginController($scope, $firebaseAuth, $window) {
   var auth = $firebaseAuth();
   $scope.dados = {};
   $scope.login = login;
-  $scope.mensagemErro;
+  $scope.mensagemErro = {};
+  $scope.controleErro = false;
 
   function login() {
     // A única diferença desse controller para o de cadastro é a função
@@ -58,8 +95,13 @@ function LoginController($scope, $firebaseAuth, $window) {
   }
 
   function loginErro(erro) {
+    $scope.controleErro = true;
     $scope.mensagemErro = erro.message;
   }
+}
+
+function loginController($scope, $state) {
+  console.log("Login");
 }
 
 angular.module('setlist').controller("UsuarioController", UsuarioController);

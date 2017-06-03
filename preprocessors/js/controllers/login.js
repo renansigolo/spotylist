@@ -1,12 +1,11 @@
-// Esse controller é similar ao CadastroController, verificar os comentários
-// feitos nele.
 angular.module('setlist').controller("LoginController", LoginController);
 
 function LoginController($scope, $firebaseAuth, $window) {
   var auth = $firebaseAuth();
   $scope.dados = {};
   $scope.login = login;
-  $scope.mensagemErro;
+  $scope.mensagemErro = {};
+  $scope.controleErro = false;
 
   function login() {
     // A única diferença desse controller para o de cadastro é a função
@@ -21,6 +20,11 @@ function LoginController($scope, $firebaseAuth, $window) {
   }
 
   function loginErro(erro) {
+    $scope.controleErro = true;
     $scope.mensagemErro = erro.message;
   }
+}
+
+function loginController($scope, $state) {
+  console.log("Login");
 }

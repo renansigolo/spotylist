@@ -1,3 +1,10 @@
-// O segundo parâmetro da função angular.module informa quais depências serão
-// usadas no nosso módulo.
-var app = angular.module('setlist', ['firebase']);
+//Inicia o modulo do Angular
+var app = angular.module('setlist', ['firebase', 'ui.router']);
+
+//Declara os modulos do controllers
+app.controller("LoginController", loginController);
+app.controller("CadastroController", cadastroController);
+app.controller("HomeController", homeController);
+
+//Rotas
+app.config(rotas);

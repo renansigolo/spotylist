@@ -1,3 +1,26 @@
-body{
+body {
   padding: 30px;
+}
+
+.float-right {
+  float: right;
+}
+
+@media (max-width: 767px) {
+  .margin-top {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .align-center {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 993px) {
+  .margin-top {
+    margin-top: 20px;
+  }
 }

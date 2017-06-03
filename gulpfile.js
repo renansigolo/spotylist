@@ -62,6 +62,7 @@ var watch = require('gulp-watch');
 //Concat Modules
 var jsFiles = [
   "preprocessors/js/app.js",
+  "preprocessors/js/route.js",
   "preprocessors/js/controllers/**/*"
 ];
 
