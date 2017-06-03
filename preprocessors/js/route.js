@@ -12,7 +12,7 @@ function rotas($stateProvider, $urlRouterProvider) {
     url: '/cadastro'
   });
   $stateProvider.state('home', {
-    templateUrl: 'templates/home.html',
+    templateUrl: 'home.html',
     controller: 'HomeController',
     url: '/home'
   });

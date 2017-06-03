@@ -23,7 +23,7 @@ function rotas($stateProvider, $urlRouterProvider) {
     url: '/cadastro'
   });
   $stateProvider.state('home', {
-    templateUrl: 'templates/home.html',
+    templateUrl: 'home.html',
     controller: 'HomeController',
     url: '/home'
   });
@@ -55,7 +55,7 @@ function CadastroController($scope, $firebaseAuth, $window) {
     // Caso o cadastro seja realizado com sucesso, vamos redirecionar o
     // usuário para página 'quadro'.
     console.log(sucesso);
-    $window.location.href = '/home.html';
+    $window.location.href = 'home.html';
   }
 
   function cadastroErro(erro) {
@@ -91,7 +91,7 @@ function LoginController($scope, $firebaseAuth, $window) {
 
   function loginSucesso(sucesso) {
     console.log(sucesso);
-    $window.location.href = 'usuario.html';
+    $window.location.href = 'home.html';
   }
 
   function loginErro(erro) {

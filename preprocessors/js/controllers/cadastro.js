@@ -21,7 +21,7 @@ function CadastroController($scope, $firebaseAuth, $window) {
     // Caso o cadastro seja realizado com sucesso, vamos redirecionar o
     // usuário para página 'quadro'.
     console.log(sucesso);
-    $window.location.href = '/home.html';
+    $window.location.href = 'home.html';
   }
 
   function cadastroErro(erro) {

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>PickList</title>
+</head>
+
+<body class="container" ng-app="setlist">
+
+  <div class="jumbotron col-sm-12" ng-controller="LoginController" id="home">
+    <h1 class="text-center">Busque aqui seu artista favorito</h1>
+    <p class="text-center">Digite o nome abaixo</p>
+    <section>
+      <div class="col-sm-12">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Busque seu artista favorito ...">
+          <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </span>
+        </div>
+    </section>
+    </div>
+
+    <div class="panel panel-default col-sm-12">
+      <h1 class="text-center">**Nome do Artista**</h1>
+      <p class="text-center">**Genero**</p>
+      <div class="panel-body">
+        <div class="row align-center">
+          <div class="col-sm-6">
+            <img src="https://placeimg.com/640/640/any" class="img-responsive img-rounded center-block" alt="Responsive image">
+          </div>
+          <div class="col-sm-6">
+            <ul class="list-group margin-top">
+              <!--Vote-->
+              <li href="#" class="list-group-item active text-center">Escolha sua música preferida</li>
+
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">34</span> Music 01
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">54</span> Music 02
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">14</span> Music 03
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">14</span> Music 04
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">14</span> Music 05
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">14</span> Music 06
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">14</span> Music 07
+              </li>
+              <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
+                <span class="badge">14</span> Music 08
+              </li>
+              <button type="button" class="btn btn-success btn-block">Enviar</button>
+            </ul>
+          </div>
+        </div>
+        <div class="row margin-top">
+          <div class="col-sm-12">
+            <ul class="list-group">
+              <li class="list-group-item active text-center">Setlist</li>
+
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+              <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBO_M3bIBPtdyLFSWyoOJg7NkxSH4wV3m0",
+      authDomain: "projeto-mastertech.firebaseapp.com",
+      databaseURL: "https://projeto-mastertech.firebaseio.com",
+      projectId: "projeto-mastertech",
+      storageBucket: "projeto-mastertech.appspot.com",
+      messagingSenderId: "188868091743"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

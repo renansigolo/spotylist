@@ -16,7 +16,7 @@ function LoginController($scope, $firebaseAuth, $window) {
 
   function loginSucesso(sucesso) {
     console.log(sucesso);
-    $window.location.href = 'usuario.html';
+    $window.location.href = 'home.html';
   }
 
   function loginErro(erro) {
