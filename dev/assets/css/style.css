@@ -10,6 +10,11 @@ body {
   margin-top: 20px;
 }
 
+button:hover {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: infinite;
+}
+
 @media (max-width: 767px) {
   .margin-top {
     margin-top: 20px;

@@ -6,8 +6,12 @@
   "author": "Renan Sigolo <renan.sigolo@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
-    "gulp-watch": "^4.3.11"
+    "gulp-watch": "^4.3.11",
+    "querystring": "^0.2.0",
+    "request": "^2.81.0"
   }
 }
