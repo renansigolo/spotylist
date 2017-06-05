@@ -24,10 +24,6 @@ ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
-angular-spotify@^1.4.3:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/angular-spotify/-/angular-spotify-1.4.3.tgz#e25fbed6b513a048fdbf314b2555a735de208e66"
-
 angular-ui-router@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/angular-ui-router/-/angular-ui-router-1.0.3.tgz#bf2494caae95c37cf01af3761d89747cfed2db45"

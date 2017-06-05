@@ -1,35 +1,60 @@
 body {
-  padding: 30px;
+    padding: 30px;
+    font-size: 16px;
+}
+
+.btn {
+    font-size: 16px;
+}
+
+.form-control{
+    font-size: 16px;
+    height: 36px;
 }
 
 .float-right {
-  float: right;
+    float: right;
 }
 
 .button-margin-top {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 button:hover {
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
 }
 
 @media (max-width: 767px) {
-  .margin-top {
-    margin-top: 20px;
-  }
+    .margin-top {
+        margin-top: 20px;
+    }
+    td {
+        text-align: center;
+    }
+    table {
+        border-spacing: 5px;
+        border-collapse: separate;
+    }
 }
 
 @media (min-width: 768px) {
-  .align-center {
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media (min-width: 993px) {
-  .margin-top {
-    margin-top: 20px;
-  }
+    .align-center {
+        display: flex;
+        align-items: center;
+    }
+    td {
+        font-size: 18px;
+        text-align: center;
+    }
+    table {
+        border-spacing: 10px;
+        border-collapse: separate;
+    }
+    .active {
+        font-size: 18px;
+    }
+    .margin-top {
+        margin-top: 20px;
+    }
 }
