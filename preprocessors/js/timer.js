@@ -1,5 +1,5 @@
  //Script Timer
- var target_date = new Date("June 05, 2017").getTime();
+ var target_date = new Date("June 06, 2017").getTime();
  var dias, horas, minutos, segundos;
  var regressiva = document.getElementById("regressiva");
 

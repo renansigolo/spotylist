@@ -24,6 +24,9 @@ button:hover {
     -webkit-animation-duration: 3s;
     -webkit-animation-iteration-count: infinite;
 }
+#btn-radio{
+    margin-right: 10px;
+}
 
 @media (max-width: 767px) {
     .margin-top {

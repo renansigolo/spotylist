@@ -16,90 +16,68 @@
 </head>
 
 <body class="container" ng-app="setlist">
-
     <!-- Search Bar -->
-    <div class="jumbotron col-sm-12 animated fadeInLeft" ng-controller="LoginController" id="home">
-        <h1 class="text-center">Busque aqui seu artista favorito</h1>
-        <p class="text-center">Digite o nome abaixo</p>
-        <section>
-            <div class="col-sm-12">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Busque seu crush aqui...">
-                    <span class="input-group-btn">
-        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                    </span>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Search Result -->
-    <div class="panel panel-default col-sm-12 animated fadeInRight">
-        <h1 class="text-center">{{Nome do Artista}}</h1>
-        <p class="text-center">{{Genero}}</p>
-        <div class="panel-body">
-            <div class="row align-center">
-                <div class="col-sm-6">
-                    <img src="https://placeimg.com/640/640/any" class="img-responsive img-rounded center-block" alt="Responsive image">
-                </div>
-                <div class="col-sm-6">
-                    <ul class="list-group">
-                        <li class="list-group-item active text-center margin-top">Setlist</li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                        <li class="list-group-item text-left">dasdasd<span class="glyphicon glyphicon-play-circle float-right" aria-hidden="true"></span></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
+    <div class="col-sm-12 animated fadeInDown" ng-controller="LoginController" id="home">
+        <div ng-controller="BuscaController">
+            <section class="jumbotron col-sm-12">
+                <h1 class="text-center">Busque aqui seu artista favorito</h1>
+                <p class="text-center">Digite o nome abaixo</p>
                 <div class="col-sm-12">
-                    <ul class="list-group margin-top" id="voteList">
-                        <!--Vote-->
-                        <li class="list-group-item active text-center">Vote na sua música preferida</li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">34</span> Music 01
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">54</span> Music 02
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 03
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 04
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 05
-                        </li>
-                        <li class="list-group-item"><input type="radio" aria-label="..." name="escolha">
-                            <span class="badge">14</span> Music 06
-                        </li>
-                        <button type="button" class="btn btn-success btn-block">Enviar</button>
-                    </ul>
-                    <div class="alert alert-info" role="alert" id="alertaContador">
-                        <h3 class="text-center">A votação será encerrada em...</h3>
-                        <table class="table">
-                            <div class="row col-xs-12">
-                                <tr>
-                                    <td id="dia"></td>
-                                    <td id="hora"></td>
-                                    <td id="minuto"></td>
-                                    <td id="segundo"></td>
-                                </tr>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Busque seu crush aqui..." ng-model="entrada" ng-keydown="buscarNoEnter($event)">
+                        <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="buscar()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="alert alert-warning text-center margin-top animated bounce" ng-show="artistas.length == 0">Sua busca não retornou resultados :(</div>
+                    <div class="alert alert-danger text-center margin-top animated shake" ng-show="erro">Houve um erro na busca !</div>
+                </div>
+            </section>
+
+            <!-- Search Result -->
+            <div class="panel panel-default col-sm-12 animated fadeInUp" ng-repeat="artista in artistas">
+                <h1 class="text-center">{{artista.name}}</h1>
+                <div class="panel-body">
+                    <div class="row align-center">
+                        <div class="col-sm-6">
+                            <img ng-src="{{artista.images[0].url}}" class="img-responsive img-rounded center-block" alt="Responsive image">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="embed-responsive embed-responsive-4by3 margin-top">
+                                <iframe class="embed-responsive-item" src="https://open.spotify.com/embed?uri=spotify:user:paulafernandesspotify:playlist:60omDwr28ZNQFaCdtXqZNc&theme=white" width="773" height="580" allowtransparency="true"></iframe>
                             </div>
-                            <tr>
-                                <td>Dias</td>
-                                <td>Horas</td>
-                                <td>Min</td>
-                                <td>Seg</td>
-                            </tr>
-                        </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ul class="list-group margin-top" id="voteList">
+                                <!--Vote-->
+                                <li class="list-group-item active text-center">Vote na sua música preferida</li>
+                                <li class="list-group-item text-left" ng-repeat="track in tracks"><input type="radio" aria-label="..." name="escolha" id="btn-radio"><span class="badge">{{getRandomSpan()}}</span>{{track.name}}</li>
+                                <button type="button" class="btn btn-success btn-block">Enviar</button>
+                            </ul>
+                            <div class="alert alert-info" role="alert" id="alertaContador">
+                                <h3 class="text-center">A votação será encerrada em...</h3>
+                                <table class="table">
+                                    <div class="row col-xs-12">
+                                        <tr>
+                                            <td id="dia"></td>
+                                            <td id="hora"></td>
+                                            <td id="minuto"></td>
+                                            <td id="segundo"></td>
+                                        </tr>
+                                    </div>
+                                    <tr>
+                                        <td>Dias</td>
+                                        <td>Horas</td>
+                                        <td>Min</td>
+                                        <td>Seg</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,7 +98,13 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="assets/js/libs.js"></script>
+    <script src="assets/js/token.js"></script>
     <script src="assets/js/scripts.js"></script>
+    <script>
+    var span = document.querySelector('#aNumber');    
+    span.innerHTML = randomNumber;
+    var randomNumber = Math.random() * 1000;
+    </script>
 </body>
 
 </html>
