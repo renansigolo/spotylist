@@ -43,7 +43,9 @@ button:hover {
 
 @media (min-width: 768px) {
     .align-center {
+        display: -webkit-box;
         display: flex;
+        -webkit-box-align: center;
         align-items: center;
     }
     td {

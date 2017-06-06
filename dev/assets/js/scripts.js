@@ -22,7 +22,7 @@ function buscaController($scope, $http) {
 
 
     // Inserir o token gerado aqui
-    var token = 'BQD4J3Z5Z3Osk_E2LeW9IgkfIxvrdYCbZKZZdfh9YB6udb_8RynYHW2C_KB-Wy93qfgKGH0Nj56OmznlMT4cKQ';
+    var token = 'BQAkffzR0iJZysjhdovV7tlRqaZKkPrGraxfWchxAT4h9HKswq5JLbsEzGvSJAfoP8tDmVDjkLFKNny__2SOxg';
     //
 
 
