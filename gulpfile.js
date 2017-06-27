@@ -2,6 +2,12 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var watch = require('gulp-watch');
 
+var sass = require('gulp-sass');
+var cssnano = require('gulp-cssnano');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
+var rename = require('gulp-rename');
+
 // Watch Preprocessors
 
 //Concat Modules

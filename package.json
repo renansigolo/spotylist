@@ -11,7 +11,12 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.15.3",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
     "gulp-watch": "^4.3.11",
     "querystring": "^0.2.0",
     "request": "^2.81.0"
