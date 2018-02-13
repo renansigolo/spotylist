@@ -22,7 +22,7 @@ function buscaController($scope, $http) {
 
 
     // Inserir o token gerado aqui
-    var token = 'BQBqnORH-6uADqegFqLvLi5XRT3ZKoa1Fx1ezJEbywIlpXUyS0VvsvIOY4YUOQUJlNkDtZundP21Q7SYfcepxQ';
+    var token = 'BQCCG4zimcB2wxbnH_yGDylFYO50G_6zhe3VkwQpBYJGRiysEKjoap77606rwfkbu3h9qvbk3pO3Sq6NZmKZ8Q';
     //
 
 
@@ -105,7 +105,7 @@ function rotas($stateProvider, $urlRouterProvider) {
 }
 
  //Script Timer
- var target_date = new Date("June 08, 2017").getTime();
+ var target_date = new Date("June 06, 2017").getTime();
  var dias, horas, minutos, segundos;
  var regressiva = document.getElementById("regressiva");
 
