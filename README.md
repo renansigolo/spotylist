@@ -1,5 +1,7 @@
 # Spotylist
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/renansigolo/spotylist.svg)](https://greenkeeper.io/)
+
 Você escolhe o que quer ouvir !
 
 ## Build
