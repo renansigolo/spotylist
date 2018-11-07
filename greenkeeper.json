@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "api-spotify/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
